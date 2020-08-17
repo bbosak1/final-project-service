@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 var cors = require('cors');
 
 // Configuration
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/tutor");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/students");
 
 app.use(bodyParser.urlencoded({'extended': 'true'}));
 app.use(bodyParser.json());
@@ -42,7 +42,6 @@ app.get('/api/students', function (req, res) {
         if (err) {
             res.send(err);
         }
-
         res.json(students); // return all students in JSON format
     });
 });
