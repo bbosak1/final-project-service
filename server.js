@@ -112,4 +112,4 @@ app.delete('/api/students/:id', function (req, res) {
 
 // Start app and listen on port 8080
 app.listen(process.env.PORT || 8080);
-console.log("Tutor server listening on port  - ", (process.env.PORT || 8080));
+console.log("Student server listening on port  - ", (process.env.PORT || 8080));
