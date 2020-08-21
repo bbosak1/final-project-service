@@ -24,9 +24,9 @@ app.use(function (req, res, next) {
 
 // Model
 var Student = mongoose.model('Student', {
-		name: String,
-		phoneNo: String,
-		emailAddr: String,
+    name: String,
+    phoneNo: String,
+    emailAddr: String,
 });
 
 
@@ -53,8 +53,8 @@ app.post('/api/students', function (req, res) {
 
     Student.create({
         name: req.body.name,
-				phoneNo: req.body.phoneNo,
-				emailAddr: req.body.emailAddr,
+        phoneNo: req.body.phoneNo,
+        emailAddr: req.body.emailAddr,
         done: false
     }, function (err, student) {
         if (err) {
@@ -74,9 +74,9 @@ app.post('/api/students', function (req, res) {
 // Update a student
 app.put('/api/students/:id', function (req, res) {
     const student = {
-			name: req.body.name,
-			phoneNo: req.body.phoneNo,
-			emailAddr: req.body.emailAddr,
+        name: req.body.name,
+        phoneNo: req.body.phoneNo,
+        emailAddr: req.body.emailAddr,
     };
     console.log("Updating item - ", req.params.id);
     Student.update({_id: req.params.id}, student, function (err, raw) {
